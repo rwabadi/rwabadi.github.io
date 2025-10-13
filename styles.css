@@ -5,9 +5,19 @@
 }
 
 body {
-  font-family: 'Inter', 'Lato', sans-serif;
-  background: #ffffff;
-  color: #000000;
+  font-family: 'Inter', 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(
+    -45deg,
+    #f8f8f8 0%,
+    #ebe5d9 20%,
+    #ffffff 40%,
+    #d9cbb3 60%,
+    #e8e8e8 80%,
+    #f8f8f8 100%
+  );
+  background-size: 600% 600%;
+  animation: gradientMove 16s ease-in-out infinite, fadeIn 0.9s ease forwards;
+  color: #1a202c;
   line-height: 1.7;
   display: flex;
   justify-content: center;
@@ -15,7 +25,6 @@ body {
   min-height: 100vh;
   padding: 80px 24px;
   opacity: 0;
-  animation: fadeIn 0.9s ease forwards;
 }
 
 a {
@@ -36,7 +45,13 @@ a {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 48px 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .brand-logo {
@@ -44,28 +59,32 @@ a {
   height: auto;
   display: block;
   margin: 0 auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
 }
 
 .brand__underline {
   width: 120px;
-  height: 1.5px;
-  background: #c2a661;
+  height: 2px;
+  background: linear-gradient(90deg, #c2a661 0%, #d4b87a 100%);
   align-self: center;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(194, 166, 97, 0.3);
 }
 
 .brand__tagline {
   font-family: 'Inter', sans-serif;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  color: #666666;
+  font-size: 0.88rem;
+  color: #4a5568;
+  font-weight: 500;
 }
 
 .brand__address {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.92rem;
-  color: #9e9e9e;
-  font-weight: 300;
+  font-size: 0.95rem;
+  color: #718096;
+  font-weight: 400;
   letter-spacing: 0.04em;
 }
 
@@ -73,30 +92,36 @@ a {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 36px;
+  gap: 28px;
 }
 
 .contact {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  align-items: flex-start;
-  padding: 12px 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-  padding-left: 24px;
+  align-items: center;
+  padding: 36px 28px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact:first-child {
-  border-left: none;
-  padding-left: 0;
+.contact:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
 }
 
 .contact h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
   letter-spacing: 0.08em;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
+  color: #2d3748;
+  margin-bottom: 4px;
 }
 
 .contact__actions {
@@ -111,65 +136,137 @@ a {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 12px 20px;
-  border-radius: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #000000;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  font-weight: 600;
+  color: #2d3748;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
+  cursor: pointer;
+}
+
+.btn i {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.5;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn:hover,
 .btn:focus {
-  background: #c2a661;
+  background: linear-gradient(135deg, #c2a661 0%, #d4b87a 100%);
   color: #ffffff;
   border-color: #c2a661;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(194, 166, 97, 0.35);
+}
+
+.btn:hover i {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .footer {
-  margin-top: 12px;
+  margin-top: 16px;
   font-size: 0.8rem;
-  color: #777777;
+  color: #718096;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.8;
 }
 
 @media (max-width: 900px) {
   .contacts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 
-  .contact:nth-child(2) {
-    border-left: none;
-    padding-left: 0;
+  .header {
+    padding: 40px 32px;
+  }
+
+  .contact {
+    padding: 32px 24px;
   }
 }
 
 @media (max-width: 640px) {
   body {
-    padding: 60px 18px;
+    padding: 48px 20px;
     align-items: flex-start;
   }
 
   .frame {
-    gap: 48px;
+    gap: 40px;
+  }
+
+  .header {
+    padding: 36px 28px;
+    border-radius: 20px;
+  }
+
+  .brand-logo {
+    width: clamp(160px, 25vw, 220px);
+  }
+
+  .brand__tagline {
+    font-size: 0.82rem;
+  }
+
+  .brand__address {
+    font-size: 0.88rem;
   }
 
   .contacts {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 20px;
   }
 
   .contact {
-    border-left: none;
-    padding-left: 0;
+    padding: 32px 24px;
   }
 
-  .contact__actions {
-    flex-direction: column;
+  .contact h2 {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    padding: 13px 20px;
+    font-size: 0.78rem;
+  }
+
+  .btn i {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    padding: 32px 16px;
+  }
+
+  .header {
+    padding: 28px 24px;
+  }
+
+  .contact {
+    padding: 28px 20px;
+  }
+
+  .btn {
+    padding: 12px 18px;
+    font-size: 0.75rem;
+    gap: 8px;
   }
 }
 
@@ -181,5 +278,26 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  20% {
+    background-position: 50% 0%;
+  }
+  40% {
+    background-position: 100% 50%;
+  }
+  60% {
+    background-position: 50% 100%;
+  }
+  80% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
