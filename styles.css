@@ -16,7 +16,7 @@ body {
     #f8f8f8 100%
   );
   background-size: 600% 600%;
-  animation: gradientMove 16s ease-in-out infinite, fadeIn 0.9s ease forwards;
+  animation: gradientMove 25s ease-in-out infinite, fadeIn 0.9s ease forwards;
   color: #1a202c;
   line-height: 1.7;
   display: flex;

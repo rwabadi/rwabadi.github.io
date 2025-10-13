@@ -16,6 +16,19 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<div class="cf-turnstile"
+     data-sitekey="0x4AAAAAAB6YRkIuqbpcDywp"
+     data-theme="light"
+     data-size="invisible"
+     data-callback="onTurnstileSuccess">
+</div>
+<script>
+  function onTurnstileSuccess(token) {
+    console.log("Turnstile validado correctamente:", token);
+    // Aquí podrías enviar el token a un servidor si quisieras validarlo.
+  }
+</script>
   <div class="frame">
     <header class="header">
       <img src="AFO%20Logo.png" alt="AFO logo" class="brand-logo">
