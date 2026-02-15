@@ -24,6 +24,19 @@
   </noscript>
 </head>
 <body>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <div class="cf-turnstile"
+       data-sitekey="0x4AAAAAAB6YRkIuqbpcDywp"
+       data-theme="dark"
+       data-size="invisible"
+       data-callback="onTurnstileSuccess">
+  </div>
+  <script>
+    function onTurnstileSuccess(token) {
+      console.log("Turnstile validado correctamente:", token);
+    }
+  </script>
+
   <div class="terminal">
     <div class="terminal__titlebar">
       <div class="terminal__dots">
@@ -86,7 +99,7 @@
                 <span class="link-label">whatsapp</span>
                 <span class="link-value">+507 6616 8015</span>
               </a>
-              <a class="contact__link" href="https://outlook.office365.com/book/AbadiFamilyBookings@abadi.me/?ismsaljsauthenabled=true" target="_blank" rel="noopener">
+              <a class="contact__link" href="https://cal.com/rwabadi" target="_blank" rel="noopener">
                 <span class="tree-char">└──</span>
                 <span class="link-label">meeting</span>
                 <span class="link-value">Book a meeting <span class="arrow">→</span></span>
@@ -107,7 +120,7 @@
                 <span class="link-label">whatsapp</span>
                 <span class="link-value">+507 6616 6092</span>
               </a>
-              <a class="contact__link" href="https://outlook.office365.com/book/AbadiFamilyBookings@abadi.me/?ismsaljsauthenabled=true" target="_blank" rel="noopener">
+              <a class="contact__link" href="https://cal.com/ernestoabadi" target="_blank" rel="noopener">
                 <span class="tree-char">└──</span>
                 <span class="link-label">meeting</span>
                 <span class="link-value">Book a meeting <span class="arrow">→</span></span>

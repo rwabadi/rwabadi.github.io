@@ -96,7 +96,7 @@ a {
 }
 
 .terminal__dots-spacer {
-  width: 52px; /* balances the dots on the left */
+  width: 52px;
 }
 
 /* ── Terminal Body ────────────────────────────────────── */
